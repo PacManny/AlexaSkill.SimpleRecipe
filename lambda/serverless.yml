@@ -1,0 +1,16 @@
+service: MyFridge
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  iamRoleStatements:
+    - Effect: "Allow"
+      Action:
+      - "dynamodb:*"
+      Resource: "arn:aws:dynamodb:${self:provider.region}:*:table/*"
+functions:
+  echo:
+    handler: index.handler
+    memorySize: 256
+    events: 
+      - alexaSkill

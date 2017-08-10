@@ -1,0 +1,17 @@
+{
+  "name": "MyFridge",
+  "version": "1.0.0",
+  "description": "food recipe alexa project",
+  "main": "index.js",
+  "dependencies": {
+    "alexa-sdk": "^1.0.8",
+    "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "alexa-sdk": "^1.0.6",
+    "mocha": "^3.4.2"
+  },
+  "scripts": {
+    "test": "node_modules/.bin/mocha"
+  }
+}
