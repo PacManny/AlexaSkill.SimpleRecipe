@@ -99,7 +99,7 @@
           "S3Bucket": {
             "Ref": "ServerlessDeploymentBucket"
           },
-          "S3Key": "serverless/MyFridge/dev/1502325737845-2017-08-10T00:42:17.845Z/MyFridge.zip"
+          "S3Key": "serverless/MyFridge/dev/1502331368522-2017-08-10T02:16:08.522Z/MyFridge.zip"
         },
         "FunctionName": "MyFridge-dev-echo",
         "Handler": "index.handler",
@@ -118,14 +118,14 @@
         "IamRoleLambdaExecution"
       ]
     },
-    "EchoLambdaVersionIdRFCyJZ7heWgLGhchixWd4tthPnOJgtgsMbhNmpxnk": {
+    "EchoLambdaVersionKGEYZ7eioSZrRN1ft6zzud3gtOQNRowkTlFqWHdQ0": {
       "Type": "AWS::Lambda::Version",
       "DeletionPolicy": "Retain",
       "Properties": {
         "FunctionName": {
           "Ref": "EchoLambdaFunction"
         },
-        "CodeSha256": "IdRFCyJZ7heWgLGhchixWd4tthPnOJgtgsMbhNmpxnk="
+        "CodeSha256": "KGEYZ7eioSZr/RN/1ft6zzud3gtOQNRowkTlFqWHdQ0="
       }
     },
     "EchoLambdaPermissionAlexaSkill": {
@@ -151,7 +151,7 @@
     "EchoLambdaFunctionQualifiedArn": {
       "Description": "Current Lambda function version",
       "Value": {
-        "Ref": "EchoLambdaVersionIdRFCyJZ7heWgLGhchixWd4tthPnOJgtgsMbhNmpxnk"
+        "Ref": "EchoLambdaVersionKGEYZ7eioSZrRN1ft6zzud3gtOQNRowkTlFqWHdQ0"
       }
     }
   }
