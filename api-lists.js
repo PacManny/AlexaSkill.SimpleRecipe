@@ -1,6 +1,6 @@
 var AWS = require("aws-sdk");
 var client;
-function addItemToGroceryList(id,item,callback) {
+function addItemToGroceryList(id,item) {
     client = new AWS.DynamoDB.DocumentClient();
     var groceryList = [];
     getGroceryList(id, (list) =>
@@ -24,8 +24,7 @@ function addItemToGroceryList(id,item,callback) {
                     console.log('Saved to DynamoDB.')
                 }
             });
-    });
-    callback();
+    })
 }
 
 function getGroceryList(id, callback) {

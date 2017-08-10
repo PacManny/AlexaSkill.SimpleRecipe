@@ -20,7 +20,7 @@ var handlers = {
     'FoodItemName': function() {
         var itemName = this.event.request.intent.slots.foodItem.value;
         Edamam.GetRecipeFromItem(itemName, (recipe) => {
-            var speechOutp = ut = 'I found the recipe ' 
+            var speechOutput = 'I found the recipe ' 
                                 + recipe.name + 
                                 ', I have sent you a card with more information about this recipe.';
            this.emit(':tellWithCard', speechOutput, recipe.name , recipe.instructions )
