@@ -4,7 +4,7 @@ let client;
 let getApplicationService = (applicationId, applicationName, serviceName, callback) => {
     client = new AWS.DynamoDB.DocumentClient();
     var table = "ApplicationSettings";
-     applicationService = undefined;
+    applicationService = undefined;
 
     var params = {
         TableName: table,
@@ -19,13 +19,19 @@ let getApplicationService = (applicationId, applicationName, serviceName, callba
             console.error("Unable to query DB. Error JSON:", JSON.stringify(err, null, 2));
 
         } else {
+            if (dbData.Item != undefined) {
+                dbData.Item.ApplicationServices.forEach((element) => {
+                    if (element.ServiceName == serviceName)
+                        applicationService = element;
+                    else
+                        console.log("This application does not have a service with a service name of " + serviceName);
+                });
 
-            dbData.Item.ApplicationServices.forEach((element) => { 
-                if(element.ServiceName == serviceName)
-                    applicationService = element;
-                else
-                    console.log("This application does not have a service with a service name of " + serviceName);
-            });
+
+            }
+            else{
+                console.log("This application does not exist");
+            }
             callback(applicationService);
         }
     });
